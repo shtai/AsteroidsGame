@@ -1,7 +1,7 @@
 Spaceship shoot = new Spaceship();
 public void setup() 
 {
-  //your code here
+  size(1000, 1000);
 }
 public void draw() 
 {
@@ -21,7 +21,17 @@ class Spaceship extends Floater
   public double getPointDirection() {return myPointDirection;}  
   Spaceship()
   {
-      //Constructor
+    corners = 4;
+    xCorners[] = (500, 470, 500, 470);
+    yCorners[] = (500, 450, 600, 550);
+    myColor = color(255, 0, 0);
+    myCenterX = 500;
+    myCenterY = 500;
+    myDirectionX = 1;
+    myDirectionY = 0;
+    myPointDirection = 0;
+    
+    //Constructor
   }
 }
 
