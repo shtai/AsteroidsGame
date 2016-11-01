@@ -9,6 +9,7 @@ public void draw()
 }
 class Spaceship extends Floater  
 {   
+  int cX;
   public void setX(int x) {myCenterX=x;}
   public void getX() {return myCenterX;}
   public void setY(int y) {myCenterY = y;}   
@@ -22,16 +23,14 @@ class Spaceship extends Floater
   Spaceship()
   {
     corners = 4;
-    xCorners[] = (500, 470, 500, 470);
-    yCorners[] = (500, 450, 600, 550);
+    xCorners[] [] = {0, -3, 10, -3};
+    yCorners[] []= {0, -5, 0, 5};
     myColor = color(255, 0, 0);
     myCenterX = 500;
     myCenterY = 500;
     myDirectionX = 1;
     myDirectionY = 0;
     myPointDirection = 0;
-    
-    //Constructor
   }
 }
 
