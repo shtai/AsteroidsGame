@@ -5,7 +5,7 @@ public void setup()
 }
 public void draw() 
 {
-  //your code here
+  shoot.show();
 }
 class Spaceship extends Floater  
 {   
@@ -38,9 +38,6 @@ class Spaceship extends Floater
     myDirectionX = 1;
     myDirectionY = 0;
     myPointDirection = 0;
-  }
-  public void show()
-  {
   }
 }
 
