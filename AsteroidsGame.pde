@@ -7,6 +7,34 @@ public void draw()
 {
   shoot.show();
 }
+
+public void keyPressed()
+{
+  int rotateNums = 0;
+  double accelNums = 0;
+  if (key == 38) //arrow up
+  {
+    accelNums += 1;
+    shoot.accelerate(accelNums);
+  }
+  else if (key == 40) //arrow down
+  {
+    accelNums -= 1;
+    shoot.accelerate(accelNums);
+  }
+  else if (key == 37) //arrow left
+  {
+    rotateNums -= 1;
+    shoot.rotate(rotateNums);  
+  }
+  else if (key == 39) //arrow right
+  {
+    rotateNums += 1;
+    shoot.rotate(rotateNums);
+  }
+
+}
+
 class Spaceship extends Floater  
 {   
   public void setX(int x) {myCenterX=x;}
@@ -19,22 +47,22 @@ class Spaceship extends Floater
   public double getDirectionY() {return myDirectionY;}  
   public void setPointDirection(int degrees) {myPointDirection = degrees;}   
   public double getPointDirection() {return myPointDirection;}  
-  Spaceship()
+  public Spaceship()
   {
     corners = 6;
     xCorners = new int[corners];
     yCorners = new int[corners];
     xCorners[0] = 0;
     yCorners[0] = 0;
-    xCorners[1] = -10;    
+    xCorners[1] = -8;    
     yCorners[1] = -10;
-    xCorners[2] = 15;
+    xCorners[2] = 12;
     yCorners[2] = -10;
-    xCorners[3] = 30;
+    xCorners[3] = 25;
     yCorners[3] = 0;
-    xCorners[4] = 15;
+    xCorners[4] = 12;
     yCorners[4] = 10;
-    xCorners[5] = -10;
+    xCorners[5] = -8;
     yCorners[5] = 10;
     myColor = color(255, 0, 0);
     myCenterX = 500;
