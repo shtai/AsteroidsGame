@@ -21,17 +21,21 @@ class Spaceship extends Floater
   public double getPointDirection() {return myPointDirection;}  
   Spaceship()
   {
-    corners = 4;
+    corners = 6;
     xCorners = new int[corners];
     yCorners = new int[corners];
     xCorners[0] = 0;
-    xCorners[1] = -3;
-    xCorners[2] = 10;
-    xCorners[3] = -3;
     yCorners[0] = 0;
-    yCorners[1] = -5;
-    yCorners[2] = 0;
-    yCorners[3] = 5;
+    xCorners[1] = -10;    
+    yCorners[1] = -10;
+    xCorners[2] = 15;
+    yCorners[2] = -10;
+    xCorners[3] = 30;
+    yCorners[3] = 0;
+    xCorners[4] = 15;
+    yCorners[4] = 10;
+    xCorners[5] = -10;
+    yCorners[5] = 10;
     myColor = color(255, 0, 0);
     myCenterX = 500;
     myCenterY = 500;
