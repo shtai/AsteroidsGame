@@ -5,34 +5,34 @@ public void setup()
 }
 public void draw() 
 {
+  background(0,0,0);
   shoot.show();
 }
 
 public void keyPressed()
 {
   int rotateNums = 0;
-  double accelNums = 0;
-  if (key == 38) //arrow up
+  if (keyCode == 38) //arrow up
   {
-    accelNums += 1;
-    shoot.accelerate(accelNums);
-  }
-  else if (key == 40) //arrow down
-  {
-    accelNums -= 1;
-    shoot.accelerate(accelNums);
-  }
-  else if (key == 37) //arrow left
-  {
-    rotateNums -= 1;
-    shoot.rotate(rotateNums);  
-  }
-  else if (key == 39) //arrow right
-  {
-    rotateNums += 1;
-    shoot.rotate(rotateNums);
-  }
+    shoot.accelerate(.1);
 
+  }
+  else if (keyCode == 40) //arrow down
+  {
+    shoot.accelerate(-10);
+   
+  }
+  else if (keyCode == 37) //arrow left
+  {
+    rotateNums -= 5;
+    
+  }
+  else if (keyCode == 39) //arrow right
+  {
+    rotateNums += 5;
+    
+  }
+  shoot.rotate(rotateNums);
 }
 
 class Spaceship extends Floater  
