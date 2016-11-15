@@ -6,33 +6,49 @@ public void setup()
 public void draw() 
 {
   background(0,0,0);
+  shoot.move();
   shoot.show();
 }
 
 public void keyPressed()
 {
-  int rotateNums = 0;
+
   if (keyCode == 38) //arrow up
   {
-    shoot.accelerate(.1);
+    shoot.accelerate(1);
 
   }
   else if (keyCode == 40) //arrow down
   {
-    shoot.accelerate(-10);
+    shoot.accelerate(-1);
    
   }
   else if (keyCode == 37) //arrow left
   {
-    rotateNums -= 5;
+    shoot.rotate(-5);
     
   }
   else if (keyCode == 39) //arrow right
   {
-    rotateNums += 5;
-    
+    shoot.rotate(5);
   }
-  shoot.rotate(rotateNums);
+}
+
+class Star 
+{
+  private int myX, myY, myColor;
+  public Star()
+  {
+    myX=(int)(Math.random()*1000);
+    myY=(int)(Math.random()*1000);
+    myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+  }
+  /*public show()
+  {
+    fill(myColor);
+    ellipse(myX, myY, 20, 20);
+  }
+  */
 }
 
 class Spaceship extends Floater  
@@ -67,9 +83,10 @@ class Spaceship extends Floater
     myColor = color(255, 0, 0);
     myCenterX = 500;
     myCenterY = 500;
-    myDirectionX = 1;
+    myDirectionX = 0;
     myDirectionY = 0;
     myPointDirection = 0;
+
   }
 }
 
