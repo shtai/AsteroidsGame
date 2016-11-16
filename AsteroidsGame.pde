@@ -1,11 +1,21 @@
 Spaceship shoot = new Spaceship();
+Star [] sparkle = new Star[100];
 public void setup() 
 {
   size(1000, 1000);
+
+for (int i = 0;i<sparkle.length ; i++)
+  {
+    sparkle[i] = new Star();
+  }
 }
 public void draw() 
 {
   background(0,0,0);
+  for (int i = 0;i<sparkle.length ; i++)
+  {
+    sparkle[i].show();
+  }
   shoot.move();
   shoot.show();
 }
@@ -43,12 +53,13 @@ class Star
     myY=(int)(Math.random()*1000);
     myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
   }
-  /*public show()
+  public void show()
   {
+    noStroke();
     fill(myColor);
-    ellipse(myX, myY, 20, 20);
+    ellipse(myX, myY, 10, 10);
   }
-  */
+
 }
 
 class Spaceship extends Floater  
