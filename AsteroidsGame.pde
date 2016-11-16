@@ -1,8 +1,9 @@
 Spaceship shoot = new Spaceship();
 Star [] sparkle = new Star[100];
+int playSize = 800;
 public void setup() 
 {
-  size(1000, 1000);
+  size(800, 800);
 
 for (int i = 0;i<sparkle.length ; i++)
   {
@@ -49,8 +50,8 @@ class Star
   private int myX, myY, myColor;
   public Star()
   {
-    myX=(int)(Math.random()*1000);
-    myY=(int)(Math.random()*1000);
+    myX=(int)(Math.random()*playSize);
+    myY=(int)(Math.random()*playSize);
     myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
   }
   public void show()
@@ -92,8 +93,8 @@ class Spaceship extends Floater
     xCorners[5] = -8;
     yCorners[5] = 10;
     myColor = color(255, 0, 0);
-    myCenterX = 500;
-    myCenterY = 500;
+    myCenterX = 400;
+    myCenterY = 400;
     myDirectionX = 0;
     myDirectionY = 0;
     myPointDirection = 0;
