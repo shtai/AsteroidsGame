@@ -1,6 +1,6 @@
 Spaceship shoot = new Spaceship();
 Star [] sparkle = new Star[100];
-int playSize = 800;
+Asteroid stars = new Asteroid();
 public void setup() 
 {
   size(800, 800);
@@ -19,6 +19,7 @@ public void draw()
   }
   shoot.move();
   shoot.show();
+  stars.show();
 }
 
 public void keyPressed()
@@ -27,17 +28,14 @@ public void keyPressed()
   if (keyCode == 38) //arrow up
   {
     shoot.accelerate(1);
-
   }
   else if (keyCode == 40) //arrow down
   {
     shoot.accelerate(-1);
-   
   }
   else if (keyCode == 37) //arrow left
   {
     shoot.rotate(-5);
-    
   }
   else if (keyCode == 39) //arrow right
   {
@@ -77,8 +75,9 @@ class Spaceship extends Floater
   public double getPointDirection() {return myPointDirection;}  
   public Spaceship()
   {
-    xCorners = new int[6];
-    yCorners = new int[6];
+    corners=6;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
     xCorners[0] = 0;
     yCorners[0] = 0;
     xCorners[1] = -8;    
