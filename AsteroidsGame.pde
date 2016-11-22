@@ -77,9 +77,8 @@ class Spaceship extends Floater
   public double getPointDirection() {return myPointDirection;}  
   public Spaceship()
   {
-    corners = 6;
-    xCorners = new int[corners];
-    yCorners = new int[corners];
+    xCorners = new int[6];
+    yCorners = new int[6];
     xCorners[0] = 0;
     yCorners[0] = 0;
     xCorners[1] = -8;    
