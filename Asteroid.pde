@@ -12,7 +12,8 @@ class Asteroid extends Floater
 	public double getPointDirection() {return myPointDirection;} 
 
 	public Asteroid()
-	corners = 10;
+	{
+	int corners = 10;
 	xCorners = new int[corners];
     yCorners = new int[corners];
     xCorners[0] = 0;
@@ -40,7 +41,10 @@ class Asteroid extends Floater
     myCenterY = 400;
     myDirectionX = 0;
     myDirectionY = 0;
-    myPointDirection = 0;{
-
+    myPointDirection = 0;
 	}
+
+	public void show(){}
+
+
 }
