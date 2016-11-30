@@ -17,9 +17,10 @@ public void draw()
   {
     sparkle[i].show();
   }*/
-  shoot.move();
-  shoot.show();
+  //shoot.move();
+  //shoot.show();
   stars.show();
+  System.out.println(stars.getX() + ", " + stars.getY());
 }
 
 public void keyPressed()
