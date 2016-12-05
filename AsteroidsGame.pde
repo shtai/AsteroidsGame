@@ -13,14 +13,16 @@ for (int i = 0;i<sparkle.length ; i++)
 public void draw() 
 {
   background(0,0,0);
-  /*for (int i = 0;i<sparkle.length ; i++)
+  for (int i = 0;i<sparkle.length ; i++)
   {
     sparkle[i].show();
-  }*/
-  //shoot.move();
-  //shoot.show();
+  }
+  shoot.move();
+  shoot.show();
+  stars.move();
+  stars.rotate((int)(Math.random()*5));
   stars.show();
-  System.out.println(stars.getX() + ", " + stars.getY());
+  
 }
 
 public void keyPressed()
@@ -42,24 +44,6 @@ public void keyPressed()
   {
     shoot.rotate(5);
   }
-}
-
-class Star 
-{
-  private int myX, myY, myColor;
-  public Star()
-  {
-    myX=(int)(Math.random()*800);
-    myY=(int)(Math.random()*800);
-    myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-  }
-  public void show()
-  {
-    noStroke();
-    fill(myColor);
-    ellipse(myX, myY, 10, 10);
-  }
-
 }
 
 class Spaceship extends Floater  
@@ -100,6 +84,25 @@ class Spaceship extends Floater
 
   }
 }
+
+class Star 
+{
+  private int myX, myY, myColor;
+  public Star()
+  {
+    myX=(int)(Math.random()*800);
+    myY=(int)(Math.random()*800);
+    myColor=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+  }
+  public void show()
+  {
+    noStroke();
+    fill(myColor);
+    ellipse(myX, myY, 10, 10);
+  }
+
+}
+
 
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
