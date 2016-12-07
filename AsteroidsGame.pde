@@ -26,7 +26,6 @@ public void draw()
   for (int i = 0;i<stars.length ; i++)
   {
     stars[i].move(); 
-    stars[i].rotate((int)(Math.random()*5));
     stars[i].show();
   }
   shoot.move();
