@@ -1,6 +1,6 @@
 Spaceship shoot = new Spaceship();
 Star [] sparkle = new Star[100];
-Asteroid stars = new Asteroid();
+Asteroid [] stars = new Asteroid[10];
 public void setup() 
 {
   size(800, 800);
@@ -9,7 +9,13 @@ for (int i = 0;i<sparkle.length ; i++)
   {
     sparkle[i] = new Star();
   }
+for (int i = 0;i<stars.length ; i++)
+  {
+    stars[i] = new Asteroid();
+  }
+
 }
+
 public void draw() 
 {
   background(0,0,0);
@@ -17,12 +23,14 @@ public void draw()
   {
     sparkle[i].show();
   }
+  for (int i = 0;i<stars.length ; i++)
+  {
+    stars[i].move(); 
+    stars[i].rotate((int)(Math.random()*5));
+    stars[i].show();
+  }
   shoot.move();
   shoot.show();
-  stars.move();
-  stars.rotate((int)(Math.random()*5));
-  stars.show();
-  
 }
 
 public void keyPressed()
