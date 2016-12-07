@@ -1,18 +1,18 @@
 Spaceship shoot = new Spaceship();
 Star [] sparkle = new Star[100];
-Asteroid [] stars = new Asteroid[10];
+ArrayList <Asteroid> stars = new ArrayList <Asteroid> ();
 public void setup() 
 {
   size(800, 800);
 
+//mini random circle background
 for (int i = 0;i<sparkle.length ; i++)
   {
     sparkle[i] = new Star();
   }
-for (int i = 0;i<stars.length ; i++)
-  {
-    stars[i] = new Asteroid();
-  }
+
+//Stars - Asteroids
+  stars.add(new Asteroid());
 
 }
 
@@ -23,7 +23,7 @@ public void draw()
   {
     sparkle[i].show();
   }
-  for (int i = 0;i<stars.length ; i++)
+  for (int i = 0;i<stars.size() ; i++)
   {
     stars[i].move(); 
     stars[i].show();
