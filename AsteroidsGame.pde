@@ -1,6 +1,6 @@
 Spaceship shoot = new Spaceship();
 Star [] sparkle = new Star[100];
-ArrayList <Asteroid> stars = new ArrayList <Asteroid> (50);
+ArrayList <Asteroid> stars = new ArrayList <Asteroid> ();
 public void setup() 
 {
   size(800, 800);
@@ -12,11 +12,10 @@ public void setup()
     }
 
   //Stars - Asteroids
-  for (int i = 0; i<stars.size();i++)
+  for (int nI = 0; nI<10;nI++)
   {
     stars.add(new Asteroid());
   }
-
 }
 
 public void draw() 
@@ -30,6 +29,10 @@ public void draw()
   {
     starsList.move();
     starsList.show();
+    if (dist(starsList.getX(), starsList.getY(), shoot.getX(), shoot.getY())<=20)
+    {
+      stars.remove(stars);
+    }
   }
   shoot.move();
   shoot.show();
